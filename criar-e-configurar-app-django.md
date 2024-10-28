@@ -1,5 +1,4 @@
-# Django Project Setup Guide
-
+# Guia de instalação e configuração de um projeto Django
 Este guia fornece um passo a passo básico para criar e configurar um projeto Django.
 
 ## Requisitos
@@ -13,6 +12,8 @@ Primeiro, instale o Django usando `pip`. Abra seu terminal e execute:
 
 ```bash
 python3 -m pip install django
+#OU
+pip install django
 ```
 
 ## Passo 2: Criar um Projeto Django
@@ -21,11 +22,20 @@ Após instalar o Django, crie o projeto com o comando:
 
 ```bash
 django-admin startproject nome_do_projeto
+#OU
+python3 -m django startproject nome_do_projeto
+
+# se você já clonou o projeto vazio do git, adicione um ponto ao final do comando, para não criar outra subpasta, assim:
+
+django-admin startproject nome_do_projeto .
+#OU
+python3 -m django startproject nome_do_projeto .
 ```
 
 Substitua `nome_do_projeto` pelo nome desejado para seu projeto.
 
 ## Passo 3: Navegar para o Diretório do Projeto
+Siga esse passo apenas se você não usou o `.` no final do comando anterior
 
 Entre no diretório do projeto que foi criado:
 
@@ -50,7 +60,7 @@ O Django usa SQLite como banco de dados padrão, mas é possível configurar out
 1. Abra o arquivo `settings.py` na pasta do projeto.
 2. Localize a seção `DATABASES` e ajuste as configurações conforme o banco de dados desejado.
 
-Para manter as configurações padrão, não é necessário fazer alterações.
+Obs.: Para manter as configurações padrão, não é necessário fazer alterações, apenas pule este passo
 
 ## Passo 6: Aplicar as Migrações
 
@@ -89,6 +99,8 @@ Caso precise instalar outros pacotes (exemplo: `requests`), faça assim:
 
 ```bash
 python3 -m pip install requests
+#OU
+pip install requests
 ```
 
 Inclua qualquer biblioteca adicional conforme a necessidade do seu projeto.
