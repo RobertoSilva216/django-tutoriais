@@ -112,34 +112,44 @@ def home(request):
     return render(request, 'nome_do_app/index.html')
 ```
 
-## Passo 10: Configurar o Roteamento no `urls.py` do seu projeto
-No arquivo `views.py` do seu aplicativo, adicione a seguinte view:
+## Passo 10: Configurar o roteamento no `urls.py` no seu app
+- No diretório do seu app, crie o arquivo `urls.py`
+- Adicione a importação da view e configure a URL:
 
 ```bash
-from django.shortcuts import render
+from django.urls import path
+from nome_do_app.views import home 
 
-def home(request):
-    return render(request, 'nome_do_app/index.html')
+urlpatterns = [
+    path('', home, name='home'),  # Rota para a view
+]
+
 ```
 
-## Passo 11: Executar o Servidor
+## Passo 11: Incluir no seu projeto o roteamento feito 
 - No diretório do seu projeto, abra o arquivo `urls.py`
-- Import a view criada acima e configure a URL:
+- Inclua o arquivo de rotas criado anteriormente
 
 ```bash
 from django.contrib import admin
-from django.urls import path
-from nome_do_app.views import home # Importação da view
+from django.urls import path, include #adicione 'include' ao final dessa linha
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home'),  # Rota para a view
+    path('', include('nome_do_app.urls')), #adicione essa linha
 ]
+```
+
+## Passo 12: Executar o Servidor
+Agora, você pode iniciar o servidor local para testar o projeto
+
+```bash
+python3 manage.py runserver
 ```
 
 Acesse o servidor em seu navegador pelo endereço `http://127.0.0.1:8000/`.
 
-## Passo 12: Instalar Pacotes Adicionais
+## Passo 13: Instalar Pacotes Adicionais
 
 Caso precise instalar outros pacotes (exemplo: `requests`), faça assim:
 
