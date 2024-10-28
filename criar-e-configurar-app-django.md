@@ -11,17 +11,17 @@ Este guia fornece um passo a passo básico para criar e configurar um projeto Dj
 
 Primeiro, instale o Django usando `pip`. Abra seu terminal e execute:
 
-    ```bash
-    python3 -m pip install django
-    ```
+```bash
+python3 -m pip install django
+```
 
 ## Passo 2: Criar um Projeto Django
 
 Após instalar o Django, crie o projeto com o comando:
 
-    ```bash
-    django-admin startproject nome_do_projeto
-    ```
+```bash
+django-admin startproject nome_do_projeto
+```
 
 Substitua `nome_do_projeto` pelo nome desejado para seu projeto.
 
@@ -29,17 +29,17 @@ Substitua `nome_do_projeto` pelo nome desejado para seu projeto.
 
 Entre no diretório do projeto que foi criado:
 
-    ```bash
-    cd nome_do_projeto
-    ```
+```bash
+cd nome_do_projeto
+```
 
 ## Passo 4: Criar um Aplicativo Django
 
 Dentro do projeto, crie um aplicativo. O Django organiza funcionalidades em "apps". Para criar o primeiro app, use:
 
-    ```bash
-    python3 manage.py startapp nome_do_app
-    ```
+```bash
+python3 manage.py startapp nome_do_app
+```
 
 Substitua `nome_do_app` pelo nome desejado para o aplicativo.
 
@@ -56,20 +56,20 @@ Para manter as configurações padrão, não é necessário fazer alterações.
 
 Crie as tabelas no banco de dados usando as migrações iniciais:
 
-    ```bash
-    python3 manage.py migrate
-    ```
+```bash
+python3 manage.py migrate
+```
 
 ## Passo 7: Configurar o Aplicativo no Projeto
 
 1. No arquivo `settings.py`, adicione o nome do aplicativo na lista `INSTALLED_APPS`:
 
-    ```python
-    INSTALLED_APPS = [
-        # outras apps
-        'nome_do_app',
-    ]
-    ```
+```python
+INSTALLED_APPS = [
+    # outras apps
+    'nome_do_app',
+]
+```
 
 2. Salve o arquivo.
 
@@ -77,9 +77,9 @@ Crie as tabelas no banco de dados usando as migrações iniciais:
 
 Agora, você pode iniciar o servidor local para testar o projeto:
 
-    ```bash
-    python3 manage.py runserver
-    ```
+```bash
+python3 manage.py runserver
+```
 
 Acesse o servidor em seu navegador pelo endereço `http://127.0.0.1:8000/`.
 
@@ -87,9 +87,9 @@ Acesse o servidor em seu navegador pelo endereço `http://127.0.0.1:8000/`.
 
 Caso precise instalar outros pacotes (exemplo: `requests`), faça assim:
 
-    ```bash
-    python3 -m pip install requests
-    ```
+```bash
+python3 -m pip install requests
+```
 
 Inclua qualquer biblioteca adicional conforme a necessidade do seu projeto.
 
