@@ -83,17 +83,63 @@ INSTALLED_APPS = [
 
 2. Salve o arquivo.
 
-## Passo 8: Executar o Servidor
-
-Agora, você pode iniciar o servidor local para testar o projeto:
+## Passo 8: Criar um Template Básico
+- Dentro do diretório do seu aplicativo (`nome_do_app`), crie uma pasta chamada `templates`
+- Dentro da pasta `templates`, crie um arquivo HTML chamado `index.html` e adicione o seguinte conteúdo:
 
 ```bash
-python3 manage.py runserver
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Template Django</title>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+    <p>Bem-vindo ao meu primeiro template Django.</p>
+</body>
+</html>
+```
+
+## Passo 9: Criar uma View para Servir o Template
+No arquivo `views.py` do seu aplicativo, adicione a seguinte view:
+
+```bash
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'nome_do_app/index.html')
+```
+
+## Passo 10: Configurar o Roteamento no `urls.py` do seu projeto
+No arquivo `views.py` do seu aplicativo, adicione a seguinte view:
+
+```bash
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'nome_do_app/index.html')
+```
+
+## Passo 11: Executar o Servidor
+- No diretório do seu projeto, abra o arquivo `urls.py`
+- Import a view criada acima e configure a URL:
+
+```bash
+from django.contrib import admin
+from django.urls import path
+from nome_do_app.views import home # Importação da view
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', home, name='home'),  # Rota para a view
+]
 ```
 
 Acesse o servidor em seu navegador pelo endereço `http://127.0.0.1:8000/`.
 
-## Passo 9: Instalar Pacotes Adicionais
+## Passo 12: Instalar Pacotes Adicionais
 
 Caso precise instalar outros pacotes (exemplo: `requests`), faça assim:
 
